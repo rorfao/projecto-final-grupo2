@@ -17,6 +17,5 @@ atividade: VARCHAR(50) NOT NULL,
 distrito: 
 concelho:
 morada: 
-telefone: 
-
+telefone:
 ```

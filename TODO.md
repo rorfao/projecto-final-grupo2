@@ -3,9 +3,7 @@
 ## Fase 1: Planeamento e Configuração Inicial
 
 - [x] Definir tema do projecto: roteiro/catálogo de oficinas tradicionais de artesanato
-
 - [x] Definir nome do projecto: TUGARTES E TUFÍCIOS
-
 - [x] Procurar exemplos
 
 | Nome     | Actividade | Localização | Telefone | Email | Website |
@@ -17,27 +15,50 @@
 | Capuchinhas | | | | | | 
 
 
+- [x] Identificar os 4 campos adicionais além do id (incluir texto, número/booleano/data): 
 
-    Identificar os 4 campos adicionais além do id (incluir texto, número/booleano/data). 
+```sql
+id -- chave primária, auto-incrementada
+nome -- obrigatório
+atividade -- exemplo: olaria
+distrito -- obrigatório
+concelho -- 
+morada -- opcional
+telefone -- opcional, campo numérico
+email -- opcional
+website -- opcional
+descricao -- 
+imagem -- opcional?
+```
 
-    Configurar a Estrutura de Pastas 
+- [x] Configurar a Estrutura de Pastas 
+    - [x] Criar a pasta raiz do projeto. 
+    - [x] Criar a pasta frontend/. 
 
-        Criar a pasta raiz do projeto. 
+- [] Inicializar o Projeto Node.js 
+    - [] Correr npm init -y na raiz. 
+    - [] Instalar dependências obrigatórias (express, dotenv, mysql2). 
+    - [] Instalar dependências de desenvolvimento (nodemon). 
+    - [] Configurar os scripts "dev" e "start" no package.json. 
 
-        Criar a pasta frontend/. 
-
-    Inicializar o Projeto Node.js 
-
-        Correr npm init -y na raiz. 
-
-        Instalar dependências obrigatórias (express, dotenv, mysql2 ou prisma). 
-
-        Instalar dependências de desenvolvimento (nodemon). 
-
-    Configurar os scripts "dev" e "start" no package.json. 
-
-    Configurar Variáveis de Ambiente 
+- [] Configurar Variáveis de Ambiente 
 
     Criar o ficheiro .env com as credenciais locais. 
 
     Criar o ficheiro .env.example sem dados sensíveis. 
+
+## Fase 2: Fase 2: Base de Dados (MySQL) 
+
+    Escolher a Tecnologia de Acesso 
+
+    Decidir entre mysql2 (SQL manual) ou prisma. 
+
+    Criar a Estrutura da Base de Dados 
+
+    Se usar mysql2: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste. 
+
+    Se usar Prisma: Criar o schema.prisma, definir o modelo e gerar o cliente (npx prisma generate). 
+
+    Testar Conectividade 
+
+    Garantir que o MySQL está ligado e comunica com a aplicação. 
