@@ -1,21 +1,12 @@
 - nome do projeto;
-
 - objetivo da aplicação;
-
 - tecnologias usadas;
-
 - como criar/importar a base de dados;
-
 - como configurar o `.env`;
-
 - como instalar dependências;
-
 - como correr o backend;
-
 - como abrir o frontend;
-
 - lista das rotas da API;
-
 - exemplos simples de utilização.
 
 
