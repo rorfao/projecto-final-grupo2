@@ -36,26 +36,23 @@ imagem -- opcional?
     - [x] Criar a pasta frontend/. 
 
 - [] Inicializar o Projeto Node.js 
-    - [] Correr npm init -y na raiz. 
-    - [] Instalar dependências obrigatórias (express, dotenv, mysql2). 
-    - [] Instalar dependências de desenvolvimento (nodemon). 
-    - [] Configurar os scripts "dev" e "start" no package.json. 
+    - [x] Correr npm init -y na raiz. 
+    - [x] Instalar dependências obrigatórias (express, dotenv, mysql2). 
+    - [x] Instalar dependências de desenvolvimento (nodemon). 
+    - [x] Configurar os scripts "dev" e "start" no package.json.
+    - [x] Criar o .gitignore e adicionar o node_modules e .env
 
 - [] Configurar Variáveis de Ambiente 
-
-    Criar o ficheiro .env com as credenciais locais. 
-
-    Criar o ficheiro .env.example sem dados sensíveis. 
+    - [] Criar o ficheiro .env com as credenciais locais. 
+    - [] Criar o ficheiro .env.example sem dados sensíveis. 
 
 ## Fase 2: Fase 2: Base de Dados (MySQL) 
 
-    Escolher a Tecnologia de Acesso 
+- [x] Escolher a Tecnologia de Acesso 
+    - [x] Decidir entre mysql2 (SQL manual) ou prisma : mysql2
 
-    Decidir entre mysql2 (SQL manual) ou prisma. 
-
-    Criar a Estrutura da Base de Dados 
-
-    Se usar mysql2: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste. 
+- [] Criar a Estrutura da Base de Dados 
+    - [] Se usar mysql2: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste. 
 
     Se usar Prisma: Criar o schema.prisma, definir o modelo e gerar o cliente (npx prisma generate). 
 
