@@ -1,0 +1,22 @@
+:root{
+    --barro:#f09935;
+    --pastel:#fff0dfe5;
+    --chocolate:#562f0e;
+    --verde:#0d6234;
+    --cerde-seco:#4f9169;
+    --creme:#faf6f1;
+    --bege:hsl(30, 46%, 91%);
+    --castanho:#7b5a50;
+    --branco:#ffffff;
+    --amarelo:#fff64f;
+}
+
+*{
+    box-sizing:content-box;
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: 'Montserrat',sans-serif;
+}
+
+
