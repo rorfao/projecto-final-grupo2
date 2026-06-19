@@ -4,7 +4,6 @@
 
 - [x] Definir tema do projecto: roteiro/catálogo de oficinas tradicionais de artesanato
 - [x] Definir nome do projecto: TUGARTES E TUFÍCIOS
-- [x] Procurar exemplos
 
 | Nome     | Actividade | Localização | Telefone | Email | Website |
 |----------|------------|-------------|----------|-------|---------|
@@ -14,11 +13,17 @@
 | José Manuel Chinarro: Atelier de Pintura Alentejana | Pintura de mobiliário | Rua de São João Nr.25, Évora | 967068683 | josemanuelchinarro@gmail.com | https://www.facebook.com/josemanuel.chinarro |
 | Capuchinhas | | | | | | 
 
+| Sites Exemplo e com Informação |
+|--------------------------------|
+| https://programasaberfazer.gov.pt/mapa |
+| https://www.cearte.pt/gpaos/index.html?alias=gpao_ptc&type=list_all | 
+| https://artesanato.azores.gov.pt/ | 
+
 
 - [x] Identificar os 4 campos adicionais além do id (incluir texto, número/booleano/data): 
 
 ```sql
-id -- chave primária, auto-incrementada
+id -- chave primária, obrigatório, auto-incrementado
 nome -- obrigatório
 atividade -- exemplo: olaria
 distrito -- obrigatório
@@ -33,29 +38,73 @@ imagem -- opcional?
 
 - [x] Configurar a Estrutura de Pastas 
     - [x] Criar a pasta raiz do projeto. 
-    - [x] Criar a pasta frontend/. 
+    - [x] Criar a pasta frontend
 
-- [] Inicializar o Projeto Node.js 
+- [x] Inicializar o Projeto Node.js 
     - [x] Correr npm init -y na raiz. 
     - [x] Instalar dependências obrigatórias (express, dotenv, mysql2). 
     - [x] Instalar dependências de desenvolvimento (nodemon). 
     - [x] Configurar os scripts "dev" e "start" no package.json.
     - [x] Criar o .gitignore e adicionar o node_modules e .env
 
-- [] Configurar Variáveis de Ambiente 
-    - [] Criar o ficheiro .env com as credenciais locais. 
-    - [] Criar o ficheiro .env.example sem dados sensíveis. 
+- [x] Configurar Variáveis de Ambiente 
+    - [x] Criar o ficheiro .env com as credenciais locais. 
+    - [x] Criar o ficheiro .env.example sem dados sensíveis. 
 
 ## Fase 2: Fase 2: Base de Dados (MySQL) 
 
-- [x] Escolher a Tecnologia de Acesso 
-    - [x] Decidir entre mysql2 (SQL manual) ou prisma : mysql2
-
+- [x] Escolher a Tecnologia de Acesso, mysql2 ou prisma: mysql2
 - [] Criar a Estrutura da Base de Dados 
-    - [] Se usar mysql2: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste. 
+    - [] Mysql: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste.
+- [] Testar Conectividade: garantir que o MySQL está ligado e comunica com a aplicação. 
 
-    Se usar Prisma: Criar o schema.prisma, definir o modelo e gerar o cliente (npx prisma generate). 
+## Fase 3: Backend (Express API) 
 
-    Testar Conectividade 
+- [] Criar o Servidor Base (server.js) 
+    - [] Configurar o Express e o middleware express.json(). 
+    - [] Configurar o CORS ou express.static para integrar com o frontend. 
 
-    Garantir que o MySQL está ligado e comunica com a aplicação. 
+- [] Desenhar as Rotas da API REST
+    - [] Rota GET /api/estado (verificação de status). 
+    - [] Rota GET /api/recurso (listar todos). 
+    - [] Rota GET /api/recurso/:id (detalhe de um). 
+    - [] Rota POST /api/recurso (criar novo). 
+    - [] Rota PUT /api/recurso/:id (atualizar completo) ou PATCH. 
+    - [] Rota DELETE /api/recurso/:id (remover). 
+
+- [] Implementar Validação de Dados e Erros 
+    - [] Validar campos obrigatórios vazios, tipos numéricos e tamanho de texto no POST/PUT. 
+    - [] Responder com Status HTTP 400 e mensagem JSON em caso de erro de validação. 
+    - [] Tratar erros globais e responder com os códigos HTTP adequados.
+
+## Fase 4: Frontend (interface web)
+
+- [x] Criar a Estrutura de Ficheiros 
+    - [x] frontend/index.html 
+    - [x] frontend/styles.css 
+    - [x] frontend/app.js 
+
+- [] Desenhar a Interface (HTML/CSS) 
+    - [] Criar um formulário para inserção de dados. 
+    - [] Criar uma secção/tabela para listagem dos registos. 
+
+- [] Implementar a Lógica (JavaScript & DOM) 
+    - [] Usar fetch para listar os registos ao carregar a página. 
+    - [] Capturar o evento do formulário e usar fetch (POST) para criar registos. 
+    - [] Adicionar botões de apagar e associar ao fetch (DELETE). 
+    - [] Criar funcionalidade para editar ou alternar um estado (ex: marcar como favorito). 
+    - [] Mostrar mensagens visuais de sucesso ou erro para o utilizador. 
+
+## Fase 5: Documentação e Preparação da Entrega 
+
+- [] Escrever o README.md 
+    - [] Incluir nome do projeto, objetivo e tecnologias. 
+    - [] Adicionar instruções passo a passo para instalar dependências e correr o projeto. 
+    - [] Listar as rotas da API criadas. 
+
+- [] Exportar Base de Dados 
+    - [] Gerar o ficheiro final database.sql (via MySQL Workbench ou terminal) com estrutura e dados de teste. 
+
+- [] Limpeza de Ficheiros 
+    - [] Verificar que a pasta node_modules NÃO está incluída na entrega. 
+    - [] Confirmar que o ficheiro .env NÃO vai com passwords reais. 
