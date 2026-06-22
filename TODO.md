@@ -60,17 +60,16 @@ imagem -- opcional?
 
 ## Fase 3: Backend (Express API) 
 
-- [] Criar o Servidor Base (server.js) 
+- [x] Criar o Servidor Base (server.js) 
     - [x] Configurar o Express e o middleware express.json(). 
-    - [] Configurar o CORS ou express.static para integrar com o frontend.
 
 - [] Desenhar as Rotas da API REST
-    - [] Rota GET /api/estado (verificação de status). 
-    - [] Rota GET /api/recurso (listar todos). 
-    - [] Rota GET /api/recurso/:id (detalhe de um). 
-    - [] Rota POST /api/recurso (criar novo). 
+    - [x] Rota GET /api/estado (verificação de status). 
+    - [x] Rota GET /api/recurso (listar todos). 
+    - [x] Rota GET /api/recurso/:id (detalhe de um). 
+    - [x] Rota POST /api/recurso (criar novo). 
     - [] Rota PUT /api/recurso/:id (atualizar completo) ou PATCH. 
-    - [] Rota DELETE /api/recurso/:id (remover). 
+    - [x] Rota DELETE /api/recurso/:id (remover). 
 
 - [] Implementar Validação de Dados e Erros 
     - [] Validar campos obrigatórios vazios, tipos numéricos e tamanho de texto no POST/PUT. 
