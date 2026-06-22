@@ -54,15 +54,15 @@ imagem -- opcional?
 ## Fase 2: Fase 2: Base de Dados (MySQL) 
 
 - [x] Escolher a Tecnologia de Acesso, mysql2 ou prisma: mysql2
-- [] Criar a Estrutura da Base de Dados 
-    - [] Mysql: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste.
-- [] Testar Conectividade: garantir que o MySQL está ligado e comunica com a aplicação. 
+- [x] Criar a Estrutura da Base de Dados 
+    - [x] Mysql: Criar o ficheiro database.sql com CREATE DATABASE, CREATE TABLE (com id auto-incremento) e alguns INSERT de teste.
+- [x] Testar Conectividade: garantir que o MySQL está ligado e comunica com a aplicação. 
 
 ## Fase 3: Backend (Express API) 
 
 - [] Criar o Servidor Base (server.js) 
-    - [] Configurar o Express e o middleware express.json(). 
-    - [] Configurar o CORS ou express.static para integrar com o frontend. 
+    - [x] Configurar o Express e o middleware express.json(). 
+    - [] Configurar o CORS ou express.static para integrar com o frontend.
 
 - [] Desenhar as Rotas da API REST
     - [] Rota GET /api/estado (verificação de status). 
