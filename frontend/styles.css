@@ -66,16 +66,20 @@ body{
     display:flex;
     align-items:center;
     gap:16px;
+    
 }
 
 .logo-symbol{
-    font-size:36px;
+    font: size 10px;
+  
+    
+      
 }
 
 .logo-title{
     font-size:1.4rem;
     font-weight:600;
-    line-height:1;
+    line-height: 1.2em;
 }
 
 .logo-subtitle{
@@ -112,6 +116,7 @@ body{
     align-items:center;
     min-height:70vh;
     padding:40px 70px;
+    justify-content: flex-end;
 }
 
 .content-left{
