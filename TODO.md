@@ -106,4 +106,12 @@ imagem -- opcional?
 
 - [] Limpeza de Ficheiros 
     - [] Verificar que a pasta node_modules NÃO está incluída na entrega. 
-    - [] Confirmar que o ficheiro .env NÃO vai com passwords reais. 
+    - [] Confirmar que o ficheiro .env NÃO vai com passwords reais.
+
+## Fase 6: Checklist de Testes Finais (Autoavaliação) 
+
+- [] O projeto corre numa pasta limpa após fazer npm install? 
+- [] O frontend foi aberto corretamente (via Live Server ou Express) e NÃO por file://? 
+- [] Consigo criar, listar, editar e apagar registos diretamente pela interface (sem Postman)? 
+- [] Se enviar dados em branco, o sistema exibe o erro 400 corretamente? 
+- [] Removi todos os caminhos absolutos do código que só funcionam no meu PC?
