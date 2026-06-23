@@ -16,6 +16,7 @@ const pool = mysql.createPool({
 
 function validar(req,res,next)
 {
+    
     next()
 }
 
@@ -64,19 +65,16 @@ app.put("/api/roteiro/:id", validar, async (req,res) =>
         res.status(404).json({erro: `Atelier com id ${id} não existe!`})
     }
     const nome = req.body.nome ?? atelier.nome
-    const atividade = req.body.atividade ?? atelier.atividade
-    const distrito = req.body.distrito ?? atelier.distrito
-    const concelho = req.body.concelho ?? atelier.concelho
-    const morada = req.body.morada ?? atelier.morada
-    const email = req.body.email ?? atelier.email
-    const website = req.body.website ?? atelier.website
-    const descricao = req.body.descricao ?? atelier.descricao
-    const url_imagem = req.body.url_imagem ?? atelier.url_imagem
-    console.log(descricao)
-
+    const atividade = req.body.atividade ?? atelier[0].atividade
+    const distrito = req.body.distrito ?? atelier[0].distrito 
+    const concelho = req.body.concelho ?? atelier[0].concelho 
+    const morada = req.body.morada ?? atelier[0].morada
+    const email = req.body.email ?? atelier[0].email
+    const website = req.body.website ?? atelier[0].website
+    const descricao = req.body.descricao ?? atelier[0].descricao
+    const url_imagem = req.body.url_imagem ?? atelier[0].url_imagem
     const query2 = "UPDATE tugartes SET nome=?, atividade=?, distrito=?, concelho=?, morada=?, email=?, website=?, descricao=?, url_imagem=? WHERE id=?"
     const [resultado] = await pool.execute(query2, [nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem, id])
-    console.log(resultado)
     res.status(200).json({mensagem: "Atelier actualizado com sucesso"})
 })
 

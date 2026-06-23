@@ -63,18 +63,18 @@ imagem -- opcional?
 - [x] Criar o Servidor Base (server.js) 
     - [x] Configurar o Express e o middleware express.json(). 
 
-- [] Desenhar as Rotas da API REST
+- [x] Desenhar as Rotas da API REST
     - [x] Rota GET /api/estado (verificação de status). 
     - [x] Rota GET /api/recurso (listar todos). 
     - [x] Rota GET /api/recurso/:id (detalhe de um). 
     - [x] Rota POST /api/recurso (criar novo). 
-    - [] Rota PUT /api/recurso/:id (atualizar completo) ou PATCH. 
+    - [x] Rota PUT /api/recurso/:id (atualizar completo) ou PATCH.
     - [x] Rota DELETE /api/recurso/:id (remover). 
 
 - [] Implementar Validação de Dados e Erros 
     - [] Validar campos obrigatórios vazios, tipos numéricos e tamanho de texto no POST/PUT. 
-    - [] Responder com Status HTTP 400 e mensagem JSON em caso de erro de validação. 
-    - [] Tratar erros globais e responder com os códigos HTTP adequados.
+    - [x] Responder com Status HTTP 400 e mensagem JSON em caso de erro de validação. 
+    - [x] Tratar erros globais e responder com os códigos HTTP adequados.
 
 ## Fase 4: Frontend (interface web)
 
@@ -101,12 +101,12 @@ imagem -- opcional?
     - [] Adicionar instruções passo a passo para instalar dependências e correr o projeto. 
     - [] Listar as rotas da API criadas. 
 
-- [] Exportar Base de Dados 
-    - [] Gerar o ficheiro final database.sql (via MySQL Workbench ou terminal) com estrutura e dados de teste. 
+- [x] Exportar Base de Dados 
+    - [x] Gerar o ficheiro final database.sql (via MySQL Workbench ou terminal) com estrutura e dados de teste. 
 
-- [] Limpeza de Ficheiros 
-    - [] Verificar que a pasta node_modules NÃO está incluída na entrega. 
-    - [] Confirmar que o ficheiro .env NÃO vai com passwords reais.
+- [x] Limpeza de Ficheiros 
+    - [x] Verificar que a pasta node_modules NÃO está incluída na entrega. 
+    - [x] Confirmar que o ficheiro .env NÃO vai com passwords reais.
 
 ## Fase 6: Checklist de Testes Finais (Autoavaliação) 
 
