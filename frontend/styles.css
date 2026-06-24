@@ -30,7 +30,7 @@ body{
     overflow:hidden;
 }
 
-.hero-bg{
+.hero-bg-home{
     position:absolute;
     inset:0;
     background-image:url("assets/mapa-hero.png");
@@ -137,14 +137,20 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
-
+  
+     
 h1{
     font-family:'Cormorant Garamond',serif;
-    font-size:5rem;
+    font-size:4.2rem;
     font-weight:600;
-    line-height:.9;
+    line-height:normal; 
+    text-align: center;
+    margin-bottom: 25px;
+    color:#fbeede;
 }
+
 
 .separator{
     width:220px;
@@ -189,25 +195,179 @@ h1{
     gap:25px;
 }
 
-/*----------------------
----PAGINA ABOUT---
--------------------------*/
+/*falta terminar titulo da tabela 
+--Carla-------*/
 
-.about{
-     margin: 0;
-    padding: 0;
+/*-------------------------
+----REGISTO-----------
+--------------------*/
+
+
+ * {
     box-sizing: border-box;
-     background:#1f1611;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;    
+}
+
+body {
+    background:#4f9169;
     color:white;
     font-family:'Inter',sans-serif;
+}
+
+.container {
+    
+    max-width: 900px;
+    margin: auto;
+    background:rgb(245, 235, 220);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(249, 229, 205, 0.613);
+}
+
+
+.registo-artesao{
+    text-align: center;
+    color:whitesmoke;
+    margin-bottom: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: .9;
+    z-index:60;
+    
 
 }
 
 
 
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #562f0e;
+        }
+
+input,textarea,select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d66f3b;
+    border-radius: 6px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.required {
+    color: red;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background:#d66f3b;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4bf288;
+}
+
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.sucesso {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+    
+
+
+
+
+/*------falta tratar do about -Carla---
+-----*/
+/*----------------------
+---PAGINA ABOUT---
+-------------------------*/
+
+.about{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:#1f1611;
+    color:white;
+    font-family:'Inter',sans-serif;
+
+}
+
+/*falta tornar responsivo e alinhar itens -Carla---
+-----*/
+
 /*----------------------
 ---MAPA PAGINA CATÁLOGO---
 -------------------------*/
+.catalogo-title {
+    text-align: center;
+    color:whitesmoke;
+    margin-bottom: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: .9;
+    z-index:60;
+}
+
+.island {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.island:hover, .island.active {
+     background: rgba(240, 153, 53, 0.3) !important;
+     border-color: #f09935 !important;
+    transform: scale(1.03);
+ }
+
+ .map-card li {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.map-card li:hover, .map-card li.active {
+    background: rgba(240, 153, 53, 0.2);
+    color: #f09935;
+    padding-left: 15px;
+}
+    
+.tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+    z-index: 100;
+    pointer-events: none;
+        }
+
 
 
 .map-card{
@@ -224,11 +384,33 @@ h1{
 
 .map-card ul{
     list-style:none;
+    
 }
 
 .map-card li{
     padding:8px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+  .map-card li:hover, .map-card li.active {
+     background: rgba(240, 153, 53, 0.2);
+    color: #f09935;
+    padding-left: 15px;
+}
+
+
+.tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+    z-index: 100;
+    pointer-events: none;
 }
 
 .islands{
@@ -246,8 +428,17 @@ h1{
     display:flex;
     justify-content:center;
     align-items:center;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
+ .island:hover, .island.active {
+    background: rgba(240, 153, 53, 0.3) !important;
+    border-color: #f09935 !important;
+    transform: scale(1.03);
+}
+       
+      
 .features{
     position:relative;
     z-index:10;
@@ -282,8 +473,12 @@ h1{
     opacity:.7;
 }
 
+  
+               
+       
+
 /*----------------------
----MAPA PAGINA CATÁLOGO---
+------
 -------------------------*/
 
 @media(max-width:1100px){
@@ -341,4 +536,6 @@ h1{
     .islands{
         grid-template-columns:1fr;
     }
+
+
 }

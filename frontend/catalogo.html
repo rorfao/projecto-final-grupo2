@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,86 +7,147 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
 </head>
-
 <body>
-    
 
- <header class="header">
-
+    <header class="header">
         <div class="logo">
             <div class="logo-symbol"></div><img src="./assets/logo.jpg" alt="logo" height="70px">  
             <div>
-                <div class="logo-title">
-                    TUGARTES<br>
-                    E TUFÍCIOS
-                </div>
-
-                <div class="logo-subtitle">
-                   FEITO COM AMOR
-                </div>
+                <div class="logo-title">TUGARTES<br>E TUFÍCIOS</div>
+                <div class="logo-subtitle">FEITO COM AMOR</div>
             </div>
         </div>
-
         <nav class="menu">
             <a href="index.html">Home</a>
             <a href="catalogo.html">Catálogo</a>
             <a href="registo.html">Registo</a>
             <a href="about.html">Sobre Nós</a>
         </nav>
-
-       
-
     </header>
 
+    <div class="catalogo-title">Mapa Artesãos</div>
 
-
-
-<section class="feature">
-    <div class="feature-content">
-        <div class="row-img">
-            <img src="./assets/Mapa_de_Portugal_(subdivisiones).svg (1).png" alt="mapa" height="700">
-        </div>
-        <h2>Mapa Artesãos</h2>
-    </div>
-
-    <div class="map">
-
-        <div class="map-card">
-            <h3>Mapa Interativo</h3>
-
-                <ul>
-                    <li>Minho</li>
-                    <li>Trás-os-Montes</li>
-                    <li>Douro</li>
-                    <li>Beira Alta</li>
-                    <li>Beira Litoral</li>
-                    <li>Ribatejo</li>
-                    <li>Estremadura</li>
-                    <li>Alentejo</li>
-                    <li>Algarve</li>
-                </ul>
-        </div>
-
-        <div class="islands">
-
-            <div class="island">
-                <h4>Açores</h4>
+    <section class="feature">
+        <div class="feature-content">
+            <div class="row-img">
+                <img src="./assets/Mapa_de_Portugal_(subdivisiones).svg (1).png" alt="mapa" height="700">
             </div>
-
-            <div class="island">
-                <h4>Madeira</h4>
-            </div>
-
         </div>
 
+        <div class="map">
+            <div class="map-card">
+                <h3>Distritos de Portugal</h3>
+                <ul id="district-list">
+                    <li data-district="Aveiro">Aveiro</li>
+                    <li data-district="Beja">Beja</li>
+                    <li data-district="Braga">Braga</li>
+                    <li data-district="Bragança">Bragança</li>
+                    <li data-district="Castelo Branco">Castelo Branco</li>
+                    <li data-district="Coimbra">Coimbra</li>
+                    <li data-district="Évora">Évora</li>
+                    <li data-district="Faro">Faro</li>
+                    <li data-district="Guarda">Guarda</li>
+                    <li data-district="Leiria">Leiria</li>
+                    <li data-district="Lisboa">Lisboa</li>
+                    <li data-district="Portalegre">Portalegre</li>
+                    <li data-district="Porto">Porto</li>
+                    <li data-district="Santarém">Santarém</li>
+                    <li data-district="Setúbal">Setúbal</li>
+                    <li data-district="Viana do Castelo">Viana do Castelo</li>
+                    <li data-district="Vila Real">Vila Real</li>
+                    <li data-district="Viseu">Viseu</li>
+                        <h4>Açores</h4>
+                        <li data-district="Angra do Heroísmo">Angra do Heroísmo</li>
+                        <li data-district="Ponta Delgada">Ponta Delgada</li>
+                        <li data-district="Horta">Horta</li>
+                        <h4>Madeira</h4>
+                        <li data-district="Funchal">Funchal</li>
+                        <li data-district="Porto Santo">Porto Santo</li>
+                </div>
+            </div>
+        </div>
 
-    </div>
-</section>
+        <div class="ateliers-sidebar">
+            <h3 id="sidebar-title">Ateliers e Artesãos</h3>
+            <div class="ateliers-list" id="ateliers-list"></div>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p>Tugartes e Tufícios © 2026</p>
-</footer>
+    <footer class="footer">
+        <p>Tugartes e Tufícios © 2026</p>
+    </footer>
 
+    <script>
+        const artisans = [
+            {name: "Olaria Periquito", activity: "Olaria", location: "Nisa, Portalegre", district: "Portalegre"},
+            {name: "Porches Pottery", activity: "Olaria", location: "Lagoa, Algarve", district: "Faro"},
+            {name: "Nuno Nunes: Instrumentos Musicais", activity: "Instrumentos Musicais", location: "Angra do Heroísmo, Açores", district: "Açores"},
+            {name: "Capuchinhas", activity: "Têxteis", location: "Castro Daire, Viseu", district: "Viseu"},
+            {name: "Rendas de Bilros de Vila do Conde", activity: "Têxteis", location: "Vila do Conde, Porto", district: "Porto"},
+            {name: "Orlando Trindade - Violeiro", activity: "Instrumentos Musicais", location: "Caldas da Rainha, Leiria", district: "Leiria"},
+            {name: "Aida Atelier", activity: "Têxteis", location: "Vila Nova de Gaia, Porto", district: "Porto"},
+            {name: "Navalhas Gilberto Ferreira", activity: "Cutelaria", location: "Bragança", district: "Bragança"},
+            {name: "O Cesto", activity: "Cestaria", location: "Évora", district: "Évora"}
+        ];
+
+        function renderArtisans(district = null) {
+            const container = document.getElementById('ateliers-list');
+            const title = document.getElementById('sidebar-title');
+            container.innerHTML = '';
+
+            const filtered = district ? artisans.filter(a => a.district === district) : artisans;
+
+            title.textContent = district ? `Ateliers e Artesãos - ${district}` : 'Ateliers e Artesãos';
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<p style="opacity:0.6; padding:20px;">Nenhum artesão encontrado neste distrito/ilha.</p>`;
+                return;
+            }
+
+            filtered.forEach(art => {
+                const div = document.createElement('div');
+                div.className = 'atelier-item';
+                div.innerHTML = `
+                    <h4>${art.name}</h4>
+                    <p class="activity">${art.activity}</p>
+                    <p class="location">${art.location}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const districtItems = document.querySelectorAll('#district-list li');
+            const islandItems = document.querySelectorAll('.island');
+
+            function clearActive() {
+                districtItems.forEach(li => li.classList.remove('active'));
+                islandItems.forEach(island => island.classList.remove('active'));
+            }
+
+            // Distritos
+            districtItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    clearActive();
+                    item.classList.add('active');
+                    renderArtisans(item.dataset.district);
+                });
+            });
+
+            // Ilhas (Madeira e Açores)
+            islandItems.forEach(island => {
+                island.addEventListener('click', () => {
+                    clearActive();
+                    island.classList.add('active');
+                    renderArtisans(island.dataset.district);
+                });
+            });
+
+            // Inicial
+            renderArtisans();
+        });
+    </script>
 </body>
-</html>
+</html>    
