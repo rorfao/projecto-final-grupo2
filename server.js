@@ -16,7 +16,13 @@ const pool = mysql.createPool({
 
 function validar(req,res,next)
 {
-    
+    const {nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem} = req.body
+
+    const nomeLimpo = String(nome).trim()
+    const atividadeLimpo = String(atividade).trim()
+    const distritoLimpo = String(distrito).trim()
+    const concelhoLimpo = String(concelho).trim()
+
     next()
 }
 
