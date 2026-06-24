@@ -181,6 +181,21 @@ h1{
     gap:25px;
 }
 
+/*----------------------
+---PAGINA ABOUT---
+-------------------------*/
+
+.about{
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     background:#1f1611;
+    color:white;
+    font-family:'Inter',sans-serif;
+
+}
+
+
 
 /*----------------------
 ---MAPA PAGINA CATÁLOGO---
