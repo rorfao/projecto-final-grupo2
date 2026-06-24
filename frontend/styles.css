@@ -150,7 +150,9 @@ h1{
     margin-bottom: 25px;
     color:#fbeede;
 }
+ 
 
+ 
 
 .separator{
     width:220px;
@@ -203,7 +205,7 @@ h1{
 --------------------*/
 
 
- * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -211,35 +213,31 @@ h1{
 }
 
 body {
-    background:#4f9169;
+    background:#366b4b;
     color:white;
     font-family:'Inter',sans-serif;
 }
 
-.container {
-    
-    max-width: 900px;
+.container-registo {
+
+    max-width: 800px;
     margin: auto;
-    background:rgb(245, 235, 220);
+    background:rgb(207, 162, 117);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 2px rgba(249, 229, 205, 0.613);
+    box-shadow: 0 0 2px rgba(196, 178, 156, 0.613);
 }
 
-
-.registo-artesao{
+h5{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    font-weight:600;
+    line-height:normal; 
     text-align: center;
-    color:whitesmoke;
+    padding:3px ;
     margin-bottom: 25px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: .9;
-    z-index:60;
-    
-
+    color:#562f0e;
 }
-
 
 
 .form-group {
@@ -251,12 +249,13 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #562f0e;
+    
         }
 
 input,textarea,select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #d66f3b;
+    border: 1px solid #21567e;
     border-radius: 6px;
 }
 
@@ -281,7 +280,7 @@ button {
 }
 
 button:hover {
-    background: #4bf288;
+    background: #f4c497;
 }
 
 .erro {
@@ -394,7 +393,7 @@ button:hover {
     transition: all 0.2s ease;
 }
 
-  .map-card li:hover, .map-card li.active {
+.map-card li:hover, .map-card li.active {
      background: rgba(240, 153, 53, 0.2);
     color: #f09935;
     padding-left: 15px;
@@ -481,7 +480,7 @@ button:hover {
 ------
 -------------------------*/
 
-@media(max-width:1100px){
+@media screen and (max-width:1100px){
 
     h1{
         font-size:5rem;
@@ -505,7 +504,7 @@ button:hover {
     }
 }
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
 
     .header{
         padding:25px;
