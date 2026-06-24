@@ -62,6 +62,16 @@ body{
     padding:35px 70px;
 }
 
+.footer
+{
+    position:relative;
+    color: chocolate;
+    font-size: small;
+    z-index: 10;
+    text-align: center;
+    padding: 40px 20px;
+}
+
 .logo{
     display:flex;
     align-items:center;
@@ -180,6 +190,21 @@ h1{
     flex-direction:column;
     gap:25px;
 }
+
+/*----------------------
+---PAGINA ABOUT---
+-------------------------*/
+
+.about{
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     background:#1f1611;
+    color:white;
+    font-family:'Inter',sans-serif;
+
+}
+
 
 
 /*----------------------
