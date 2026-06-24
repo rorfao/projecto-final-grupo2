@@ -85,7 +85,7 @@ imagem -- opcional?
 
 - [] Desenhar a Interface (HTML/CSS) 
     - [] Criar um formulário para inserção de dados. 
-    - [] Criar uma secção/tabela para listagem dos registos. 
+    - [] Criar uma secção/tabela para listagem dos registos.
 
 - [] Implementar a Lógica (JavaScript & DOM) 
     - [] Usar fetch para listar os registos ao carregar a página. 
@@ -93,6 +93,12 @@ imagem -- opcional?
     - [] Adicionar botões de apagar e associar ao fetch (DELETE). 
     - [] Criar funcionalidade para editar ou alternar um estado (ex: marcar como favorito). 
     - [] Mostrar mensagens visuais de sucesso ou erro para o utilizador. 
+
+- [] Checklist páginas prontas:
+    - [x] index.html
+    - [] catalogo.html
+    - [] registo.hmtl
+    - [] about.html
 
 ## Fase 5: Documentação e Preparação da Entrega 
 
