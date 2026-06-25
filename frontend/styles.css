@@ -116,8 +116,12 @@ h5 {
     display:flex;
     gap:30px;
     list-style:none;
+    right:-280px;
 }
-
+.nav-list.active{
+    right:0;
+    
+}
 .nav-list a{
     color:white;
     text-decoration:none;
@@ -175,7 +179,7 @@ section
 
 .logo-symbol
 {
-    font: size 5px;
+    font-size: 1.2rem;
     overflow:hidden;
    
     
@@ -183,7 +187,7 @@ section
 
 .logo-title
 {
-    font: size 1.3rem;
+    font: size 1.2rem;
     font-weight:600;
     line-height: 1.2em;
     overflow:hidden;
@@ -335,8 +339,6 @@ body
 }
 
 
-
-
 /* Elementos de Entrada */
 input,
 textarea,
@@ -375,7 +377,7 @@ textarea {
 
 /* Botão Principal */
 /* Garante que o botão tem exatamente o mesmo comportamento de largura */
-button {
+button:not(.menu-btn) {
     width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
     padding: 12px;
     border: none;
@@ -426,7 +428,7 @@ textarea
 
 button
 {
-    width: 100%;
+    
     padding: 12px;
     border: none;
     background:#d66f3b;
@@ -819,8 +821,8 @@ button:hover
         gap: 20px;
         padding: 20px;
         text-align: center;
-        
-        
+        position: relative;
+        align-items:center;
     }
 
     .logo {
@@ -887,7 +889,7 @@ button:hover
 
 
 
-@media screen and (max-width:520px) {
+@media screen and (max-width:520px){
 
  .menu-btn {
         
@@ -920,6 +922,38 @@ button:hover
 
 
 }
+
+.logo
+{
+    
+    align-items:center;
+    gap: 5px;
+    overflow:hidden; 
+    flex-wrap: wrap; 
+}
+.logo-symbol
+{
+    font-size:1px;
+    overflow:hidden;
+}
+
+.logo-title
+{
+    font-size: 1.3rem;
+    font-weight:400;
+    line-height: 1.2rem;
+    overflow:hidden;
+    
+}
+
+.logo-subtitle
+{
+    font-size:.5rem;
+    letter-spacing:3px;
+    opacity:.8;
+    overflow:hidden;
+}
+
 }
 /* Telemóveis (Abaixo de 480px) */
 @media (max-width: 480px) {
