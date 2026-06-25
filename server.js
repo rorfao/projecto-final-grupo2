@@ -1,10 +1,11 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
-app.use(express.json())
 const mysql = require("mysql2/promise")
 const PORT = 3000
 const path = require("path")
+app.use(express.json())
+app.use(express.static(path.join(__dirname, "frontend")));
 
 const pool = mysql.createPool({
     host: process.env.DATABASE_HOST,

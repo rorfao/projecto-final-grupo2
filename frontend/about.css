@@ -1,0 +1,71 @@
+.grid-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.list-unstyled li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.list-unstyled li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.team-member {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #EAEAEA;
+}
+
+.team-member .role {
+    font-size: 0.9rem;
+    color: #777;
+    display: block;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #EAEAEA;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .grid-sections {
+        grid-template-columns: 1fr 1fr;
+    }
+    .full-width {
+        grid-column: span 2;
+    }
+}
