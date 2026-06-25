@@ -200,104 +200,6 @@ h1{
 /*falta terminar titulo da tabela 
 --Carla-------*/
 
-/*-------------------------
-----REGISTO-----------
---------------------*/
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;    
-}
-
-body {
-    background:#366b4b;
-    color:white;
-    font-family:'Inter',sans-serif;
-}
-
-.container-registo {
-
-    max-width: 800px;
-    margin: auto;
-    background:rgb(207, 162, 117);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 2px rgba(196, 178, 156, 0.613);
-}
-
-h5{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    font-weight:600;
-    line-height:normal; 
-    text-align: center;
-    padding:3px ;
-    margin-bottom: 25px;
-    color:#562f0e;
-}
-
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #562f0e;
-    
-        }
-
-input,textarea,select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #21567e;
-    border-radius: 6px;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.required {
-    color: red;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background:#d66f3b;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #f4c497;
-}
-
-.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 4px;
-}
-
-.sucesso {
-    margin-top: 15px;
-    color: green;
-    font-weight: bold;
-    text-align: center;
-}
-    
-
-
 
 
 /*------falta tratar do about -Carla---
@@ -538,3 +440,248 @@ button:hover {
 
 
 }
+
+/*-------------------------
+----REGISTO-----------
+--------------------*/
+        /* Reset Geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contentor do Formulário */
+.container {
+    max-width: 800px;
+    margin: 40px auto; /* Adicionado margem superior/inferior para não colar ao cabeçalho */
+    background: hsl(30, 46%, 91%);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #6a6565;
+}
+
+/* Grupos do Formulário */
+/* Garante que todos os blocos ocupam a largura total do contentor */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%; 
+    display: block;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #454242;
+}
+
+/* Elementos de Entrada */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Alinha o tamanho do campo URL da Imagem com os outros inputs */
+input[type="url"],
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: block; /* Evita variações de inline-block */
+}
+
+/* Foco nos Inputs */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #7b5a50; /* Destaca o campo ativo com a cor do botão */
+}
+
+/* Área de Texto */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Asterisco de Obrigatório */
+.required {
+    color: red;
+}
+
+/* Botão Principal */
+/* Garante que o botão tem exatamente o mesmo comportamento de largura */
+button {
+    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
+    padding: 12px;
+    border: none;
+    background: #7b5a50;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block; /* Alinha perfeitamente com os inputs acima */
+    margin-top: 20px; /* Dá um pequeno espaço extra respirar após o último campo */
+    transition: background 0.3s ease;
+    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
+}   
+
+/* Efeito ao passar o rato no Botão */
+button:hover {
+    background: #b86608; /* O seu tom laranja escolhido */
+}
+
+/* Mensagens de Feedback */
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.sucesso {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Força todos os elementos a respeitarem a largura máxima sem fugir das margens */
+.form-group input,
+.form-group textarea,
+.form-group select,
+button {
+    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
+    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
+    display: block;
+}
+
+/* Força todos os elementos a respeitarem a largura máxima sem fugir das margens */
+.form-group input,
+.form-group textarea,
+.form-group select,
+button {
+    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
+    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
+    display: block;
+}
+
+/* Alinhamento do contador sem quebrar o layout */
+.contador-container {
+    text-align: right;
+    margin-top: 5px;
+    width: 100%;
+}
+
+#contadorDescricao {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ==========================================================================
+   Media Queries - Responsividade
+   ========================================================================== */
+
+/* Tablets e Ecrãs Médios (Abaixo de 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Coloca o menu abaixo do logótipo */
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: column; /* Centraliza a imagem e o texto do logo */
+        gap: 10px;
+    }
+
+    .logo-title, .logo-subtitle {
+        text-align: center;
+    }
+
+    .container {
+        margin: 20px 15px; /* Reduz a margem lateral para aproveitar o ecrã */
+        padding: 20px;     /* Reduz o espaçamento interno */
+    }
+}
+
+/* Telemóveis (Abaixo de 480px) */
+@media (max-width: 480px) {
+    .menu {
+        flex-wrap: wrap;       /* Permite que os links quebrem em duas linhas se necessário */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 14px;       /* Ajusta ligeiramente o tamanho da letra */
+    }
+
+    h1 {
+        font-size: 22px;       /* Diminui o título principal para não quebrar mal */
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 15px;         /* Ganha ainda mais espaço útil para os inputs */
+    }
+
+    button {
+        padding: 14px;         /* Aumenta o botão para ser mais fácil de carregar com o polegar */
+        font-size: 15px;
+    }
+}
+
+
+/* FIM REGISTO */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ATENÇÃO: DEIXAR NO FIM DO FICHEIRO PARA SE APLICAR A TODAS AS PAGINAS EXCETO O INDEX.HTML */
+
+/* Modificações exclusivas para páginas SECUNDÁRIAS (além do index.html) */
+.hero.hero-interna {
+    min-height: auto; /* Remove o tamanho de ecrã inteiro */
+    padding-bottom: 15px; /* Dá um pequeno espaço abaixo do menu */
+}
+
+/* Garante que o fundo se adapta à nova altura da página de registo */
+.hero-interna .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/mapa-hero.png");
+    background-size: cover;
+    background-position: center;
+}
+
