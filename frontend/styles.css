@@ -226,11 +226,8 @@ h5
 }
 
 /*falta terminar titulo da tabela 
---Carla-------*/
+--Carla-------*
 
-<<<<<<< HEAD
-
-=======
 /*-------------------------
 ----REGISTO-----------
 --------------------*/
@@ -262,6 +259,73 @@ body
     border-radius: 10px;
     box-shadow: 0 0 2px rgba(196, 178, 156, 0.613);
 }
+
+
+/* Grupos do Formulário */
+/* Garante que todos os blocos ocupam a largura total do contentor */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%; 
+    display: block;
+}
+
+
+
+
+/* Elementos de Entrada */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Alinha o tamanho do campo URL da Imagem com os outros inputs */
+input[type="url"],
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: block; /* Evita variações de inline-block */
+}
+
+
+
+/* Área de Texto */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Asterisco de Obrigatório */
+.required {
+    color: red;
+}
+
+/* Botão Principal */
+/* Garante que o botão tem exatamente o mesmo comportamento de largura */
+button {
+    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
+    padding: 12px;
+    border: none;
+    background: #7b5a50;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block; /* Alinha perfeitamente com os inputs acima */
+    margin-top: 20px; /* Dá um pequeno espaço extra respirar após o último campo */
+    transition: background 0.3s ease;
+    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
+}   
+
+
 
 .form-group
 {
@@ -326,7 +390,7 @@ button:hover
     font-weight: bold;
     text-align: center;
 }
->>>>>>> 48d9123a28e784c5c18889a793a71d955961d1f8
+
 
 /*------falta tratar do about -Carla---
 -----*/
@@ -585,163 +649,12 @@ button:hover
     {
         grid-template-columns:1fr;
     }
-<<<<<<< HEAD
+
 
 
 }
 
-/*-------------------------
-----REGISTO-----------
---------------------*/
-        /* Reset Geral */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
 
-/* Contentor do Formulário */
-.container {
-    max-width: 800px;
-    margin: 40px auto; /* Adicionado margem superior/inferior para não colar ao cabeçalho */
-    background: hsl(30, 46%, 91%);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.1);
-}
-
-/* Título */
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #6a6565;
-}
-
-/* Grupos do Formulário */
-/* Garante que todos os blocos ocupam a largura total do contentor */
-.form-group {
-    margin-bottom: 15px;
-    width: 100%; 
-    display: block;
-}
-
-/* Etiquetas */
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #454242;
-}
-
-/* Elementos de Entrada */
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none; /* Remove o contorno padrão do navegador */
-}
-
-/* Alinha o tamanho do campo URL da Imagem com os outros inputs */
-input[type="url"],
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    display: block; /* Evita variações de inline-block */
-}
-
-/* Foco nos Inputs */
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: #7b5a50; /* Destaca o campo ativo com a cor do botão */
-}
-
-/* Área de Texto */
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Asterisco de Obrigatório */
-.required {
-    color: red;
-}
-
-/* Botão Principal */
-/* Garante que o botão tem exatamente o mesmo comportamento de largura */
-button {
-    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
-    padding: 12px;
-    border: none;
-    background: #7b5a50;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block; /* Alinha perfeitamente com os inputs acima */
-    margin-top: 20px; /* Dá um pequeno espaço extra respirar após o último campo */
-    transition: background 0.3s ease;
-    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
-}   
-
-/* Efeito ao passar o rato no Botão */
-button:hover {
-    background: #b86608; /* O seu tom laranja escolhido */
-}
-
-/* Mensagens de Feedback */
-.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 4px;
-}
-
-.sucesso {
-    margin-top: 15px;
-    color: green;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Força todos os elementos a respeitarem a largura máxima sem fugir das margens */
-.form-group input,
-.form-group textarea,
-.form-group select,
-button {
-    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
-    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
-    display: block;
-}
-
-/* Força todos os elementos a respeitarem a largura máxima sem fugir das margens */
-.form-group input,
-.form-group textarea,
-.form-group select,
-button {
-    width: 100% !important; /* O !important garante que nenhuma outra regra antiga interfira */
-    box-sizing: border-box; /* Inclui o padding na largura total para não esticar para fora */
-    display: block;
-}
-
-/* Alinhamento do contador sem quebrar o layout */
-.contador-container {
-    text-align: right;
-    margin-top: 5px;
-    width: 100%;
-}
-
-#contadorDescricao {
-    font-size: 12px;
-    color: #666;
-}
 
 /* ==========================================================================
    Media Queries - Responsividade
@@ -806,17 +719,6 @@ button {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* ATENÇÃO: DEIXAR NO FIM DO FICHEIRO PARA SE APLICAR A TODAS AS PAGINAS EXCETO O INDEX.HTML */
 
 /* Modificações exclusivas para páginas SECUNDÁRIAS (além do index.html) */
@@ -834,6 +736,4 @@ button {
     background-position: center;
 }
 
-=======
-}
->>>>>>> 48d9123a28e784c5c18889a793a71d955961d1f8
+
