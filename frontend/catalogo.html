@@ -7,10 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-
     <header class="header">
         <div class="logo">
             <div class="logo-symbol"></div><img src="./assets/logo.jpg" alt="logo" height="70px">  
@@ -26,16 +24,13 @@
             <a href="about.html">Sobre Nós</a>
         </nav>
     </header>
-
     <div class="catalogo-title">Mapa Artesãos</div>
-
     <section class="feature">
         <div class="feature-content">
             <div class="row-img">
                 <img src="./assets/Mapa_de_Portugal_(subdivisiones).svg (1).png" alt="mapa" height="700">
             </div>
         </div>
-
         <div class="map">
             <div class="map-card">
                 <h3>Distritos de Portugal</h3>
@@ -68,86 +63,14 @@
                 </div>
             </div>
         </div>
-
         <div class="ateliers-sidebar">
             <h3 id="sidebar-title">Ateliers e Artesãos</h3>
             <div class="ateliers-list" id="ateliers-list"></div>
         </div>
     </section>
-
     <footer class="footer">
         <p>Tugartes e Tufícios © 2026</p>
     </footer>
-
-    <script>
-        const artisans = [
-            {name: "Olaria Periquito", activity: "Olaria", location: "Nisa, Portalegre", district: "Portalegre"},
-            {name: "Porches Pottery", activity: "Olaria", location: "Lagoa, Algarve", district: "Faro"},
-            {name: "Nuno Nunes: Instrumentos Musicais", activity: "Instrumentos Musicais", location: "Angra do Heroísmo, Açores", district: "Açores"},
-            {name: "Capuchinhas", activity: "Têxteis", location: "Castro Daire, Viseu", district: "Viseu"},
-            {name: "Rendas de Bilros de Vila do Conde", activity: "Têxteis", location: "Vila do Conde, Porto", district: "Porto"},
-            {name: "Orlando Trindade - Violeiro", activity: "Instrumentos Musicais", location: "Caldas da Rainha, Leiria", district: "Leiria"},
-            {name: "Aida Atelier", activity: "Têxteis", location: "Vila Nova de Gaia, Porto", district: "Porto"},
-            {name: "Navalhas Gilberto Ferreira", activity: "Cutelaria", location: "Bragança", district: "Bragança"},
-            {name: "O Cesto", activity: "Cestaria", location: "Évora", district: "Évora"}
-        ];
-
-        function renderArtisans(district = null) {
-            const container = document.getElementById('ateliers-list');
-            const title = document.getElementById('sidebar-title');
-            container.innerHTML = '';
-
-            const filtered = district ? artisans.filter(a => a.district === district) : artisans;
-
-            title.textContent = district ? `Ateliers e Artesãos - ${district}` : 'Ateliers e Artesãos';
-
-            if (filtered.length === 0) {
-                container.innerHTML = `<p style="opacity:0.6; padding:20px;">Nenhum artesão encontrado neste distrito/ilha.</p>`;
-                return;
-            }
-
-            filtered.forEach(art => {
-                const div = document.createElement('div');
-                div.className = 'atelier-item';
-                div.innerHTML = `
-                    <h4>${art.name}</h4>
-                    <p class="activity">${art.activity}</p>
-                    <p class="location">${art.location}</p>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const districtItems = document.querySelectorAll('#district-list li');
-            const islandItems = document.querySelectorAll('.island');
-
-            function clearActive() {
-                districtItems.forEach(li => li.classList.remove('active'));
-                islandItems.forEach(island => island.classList.remove('active'));
-            }
-
-            // Distritos
-            districtItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    clearActive();
-                    item.classList.add('active');
-                    renderArtisans(item.dataset.district);
-                });
-            });
-
-            // Ilhas (Madeira e Açores)
-            islandItems.forEach(island => {
-                island.addEventListener('click', () => {
-                    clearActive();
-                    island.classList.add('active');
-                    renderArtisans(island.dataset.district);
-                });
-            });
-
-            // Inicial
-            renderArtisans();
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>    
