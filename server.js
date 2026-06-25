@@ -17,25 +17,6 @@ const pool = mysql.createPool({
 
 function validar(req,res,next)
 {
-    const {nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem} = req.body
-
-    const nomeLimpo = String(nome).trim()
-    const atividadeLimpo = String(atividade).trim()
-    const distritoLimpo = String(distrito).trim()
-    const concelhoLimpo = String(concelho).trim()
-
-    if(nomeLimpo.length === 0 || nomeLimpo.length > 150)
-    {
-        return res.status(400).json({erro: "Nome obrigatório (entre 1 e 150 caracteres"})
-    }
-
-    if(atividadeLimpo.length === 0 || atividadeLimpo.length > 50)
-    {
-        return res.status(400).json({erro: "Nome obrigatório (entre 1 e 150 caracteres"})
-    }
-
-    
-
     /*
     nome VARCHAR(150) NOT NULL,
     atividade VARCHAR(50) NOT NULL,
@@ -48,6 +29,75 @@ function validar(req,res,next)
     descricao VARCHAR(500) NOT NULL,
     url_imagem VARCHAR(200)
     */
+   
+    const {nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem} = req.body
+    const erros = []
+
+    const nomeLimpo = String(nome ?? "").trim()
+    const atividadeLimpo = String(atividade ?? "").trim()
+    const distritoLimpo = String(distrito ?? "").trim()
+    const concelhoLimpo = String(concelho ?? "").trim()
+    const moradaLimpa = String(morada ?? "").trim()
+    const telefoneLimpo = String(telefone ?? "").trim()
+    const emailLimpo = String(email ?? "").trim()
+    const websiteLimpo = String(website ?? "").trim()
+    const descricaoLimpa = String(descricao ?? "").trim()
+    const urlImagemLimpa = String(url_imagem ?? "").trim()
+
+    if (nomeLimpo.length === 0 || nomeLimpo.length > 150)
+    {
+        erros.push("Nome obrigatório (1 a 150 caracteres).")
+    }
+
+    if (atividadeLimpo.length === 0 || atividadeLimpo.length > 50)
+    {
+        erros.push("Atividade obrigatória (1 a 50 caracteres).")
+    }
+
+    if (distritoLimpo.length === 0 || distritoLimpo.length > 50)
+    {
+        erros.push("Distrito obrigatório.")
+    }
+
+    if (concelhoLimpo.length === 0 || concelhoLimpo.length > 100)
+    {
+        erros.push("Concelho obrigatório.")
+    }
+
+    if (moradaLimpa.length > 200)
+    {
+        erros.push("Morada demasiado longa (não superior a 200 caracteres).")
+    }
+
+    if (telefoneLimpo && !/^\d+$/.test(telefoneLimpo))
+    {
+        erros.push("Telefone deve conter apenas números.")
+    }
+
+    if (emailLimpo.length > 100)
+    {
+        erros.push("Email demasiado longo (não superior a 100 caracteres).")
+    }
+
+    if (websiteLimpo.length > 150)
+    {
+        erros.push("Website demasiado longo (não superior a 150 caracteres).")
+    }
+
+    if (descricaoLimpa.length === 0 || descricaoLimpa.length > 500)
+    {
+        erros.push("Descrição obrigatória (1 a 500 caracteres).")
+    }
+
+    if (urlImagemLimpa.length > 200)
+    {
+        erros.push("URL da imagem demasiado longa (não superior a 200 caracteres).")
+    }
+
+    if (erros.length > 0)
+    {
+        return res.status(400).json({erros})
+    }
 
     next()
 }
@@ -70,7 +120,7 @@ app.get("/api/roteiro/:id", async (req,res) =>
     const [atelier] = await pool.execute(query,[id])
     if(atelier.length === 0)
     {
-        res.status(404).json({erro: "Este atelier não existe no catálogo"})
+        return res.status(404).json({erro: "Este atelier não existe no catálogo"})
     }
     res.status(200).json(atelier[0])
 })
@@ -82,8 +132,8 @@ app.post("/api/roteiro", validar, async (req,res) =>
     {
         return res.status(400).json({erro: "Faltam campos obrigatórios!"})
     }
-    const query = "INSERT INTO tugartes (nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem) VALUES (?,?,?,?,?,?,?,?,?)"
-    const resposta = await pool.execute(query,[nome, atividade, distrito, concelho, morada||null, email||null, website||null, descricao, url_imagem||null])
+    const query = "INSERT INTO tugartes (nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem) VALUES (?,?,?,?,?,?,?,?,?)"
+    const resposta = await pool.execute(query,[nome, atividade, distrito, concelho, morada||null, telefone||null, email||null, website||null, descricao, url_imagem||null])
     res.status(201).json({mensagem: "Atelier adicionado com sucesso"})
 })
 
@@ -94,19 +144,20 @@ app.put("/api/roteiro/:id", validar, async (req,res) =>
     const [atelier] = await pool.execute(query,[id])
     if(atelier.length === 0)
     {
-        res.status(404).json({erro: `Atelier com id ${id} não existe!`})
+        return res.status(404).json({erro: `Atelier com id ${id} não existe!`})
     }
-    const nome = req.body.nome ?? atelier.nome
+    const nome = req.body.nome ?? atelier[0].nome
     const atividade = req.body.atividade ?? atelier[0].atividade
     const distrito = req.body.distrito ?? atelier[0].distrito 
     const concelho = req.body.concelho ?? atelier[0].concelho 
     const morada = req.body.morada ?? atelier[0].morada
+    const telefone = req.body.telefone ?? atelier[0].telefone
     const email = req.body.email ?? atelier[0].email
     const website = req.body.website ?? atelier[0].website
     const descricao = req.body.descricao ?? atelier[0].descricao
     const url_imagem = req.body.url_imagem ?? atelier[0].url_imagem
-    const query2 = "UPDATE tugartes SET nome=?, atividade=?, distrito=?, concelho=?, morada=?, email=?, website=?, descricao=?, url_imagem=? WHERE id=?"
-    const [resultado] = await pool.execute(query2, [nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem, id])
+    const query2 = "UPDATE tugartes SET nome=?, atividade=?, distrito=?, concelho=?, morada=?, telefone=?, email=?, website=?, descricao=?, url_imagem=? WHERE id=?"
+    const [resultado] = await pool.execute(query2, [nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem, id])
     res.status(200).json({mensagem: "Atelier actualizado com sucesso"})
 })
 
@@ -117,7 +168,7 @@ app.delete("/api/roteiro/:id", async (req,res) =>
     const [atelier] = await pool.execute(query,[id])
     if(atelier.length === 0)
     {
-        res.status(404).json({erro: `Atelier com id ${id} não existe!`})
+        return res.status(404).json({erro: `Atelier com id ${id} não existe!`})
     }
     const query2 = "DELETE FROM tugartes WHERE id=?"
     const [resposta] = await pool.execute(query2,[id])

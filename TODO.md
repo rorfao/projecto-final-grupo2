@@ -27,12 +27,12 @@ id -- chave primária, obrigatório, auto-incrementado
 nome -- obrigatório
 atividade -- exemplo: olaria
 distrito -- obrigatório
-concelho -- 
+concelho -- obrigatório
 morada -- opcional
 telefone -- opcional, campo numérico
 email -- opcional
 website -- opcional
-descricao -- 
+descricao -- obrigatório
 imagem -- opcional?
 ```
 
@@ -71,8 +71,8 @@ imagem -- opcional?
     - [x] Rota PUT /api/recurso/:id (atualizar completo) ou PATCH.
     - [x] Rota DELETE /api/recurso/:id (remover). 
 
-- [] Implementar Validação de Dados e Erros 
-    - [] Validar campos obrigatórios vazios, tipos numéricos e tamanho de texto no POST/PUT. 
+- [x] Implementar Validação de Dados e Erros 
+    - [x] Validar campos obrigatórios vazios, tipos numéricos e tamanho de texto no POST/PUT. 
     - [x] Responder com Status HTTP 400 e mensagem JSON em caso de erro de validação. 
     - [x] Tratar erros globais e responder com os códigos HTTP adequados.
 
@@ -84,7 +84,7 @@ imagem -- opcional?
     - [x] frontend/app.js 
 
 - [] Desenhar a Interface (HTML/CSS) 
-    - [] Criar um formulário para inserção de dados. 
+    - [x] Criar um formulário para inserção de dados. 
     - [] Criar uma secção/tabela para listagem dos registos.
 
 - [] Implementar a Lógica (JavaScript & DOM) 
