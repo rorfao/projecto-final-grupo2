@@ -23,6 +23,31 @@ function validar(req,res,next)
     const distritoLimpo = String(distrito).trim()
     const concelhoLimpo = String(concelho).trim()
 
+    if(nomeLimpo.length === 0 || nomeLimpo.length > 150)
+    {
+        return res.status(400).json({erro: "Nome obrigatório (entre 1 e 150 caracteres"})
+    }
+
+    if(atividadeLimpo.length === 0 || atividadeLimpo.length > 50)
+    {
+        return res.status(400).json({erro: "Nome obrigatório (entre 1 e 150 caracteres"})
+    }
+
+    
+
+    /*
+    nome VARCHAR(150) NOT NULL,
+    atividade VARCHAR(50) NOT NULL,
+    distrito VARCHAR(50) NOT NULL,
+    concelho VARCHAR(100) NOT NULL,
+    morada VARCHAR(200),
+    telefone INT,
+    email VARCHAR(100), 
+    website VARCHAR(150),
+    descricao VARCHAR(500) NOT NULL,
+    url_imagem VARCHAR(200)
+    */
+
     next()
 }
 
