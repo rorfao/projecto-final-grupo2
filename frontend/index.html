@@ -6,6 +6,7 @@
     <title>TuGartes e TuFícios</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="body-home">
@@ -23,10 +24,17 @@
             </div>
             
             <nav class="header-menu">
-                <a href="index.html">Home</a>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="registo.html">Registo</a>
-                <a href="about.html">Sobre Nós</a>
+
+                <button class="menu-btn" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                 </button>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="registo.html">Registo</a></li>
+                    <li><a href="about.html">Sobre Nós</a></li>
+                </ul>
             </nav>
         
         </header>
@@ -48,7 +56,37 @@
     </footer>
 </section>
 
+<script>
+    const navBtn = document.querySelector('.menu-btn')
+    const navList = document.querySelector('.nav-list')
+    
+    navBtn.addEventListener('click', function() {
+         navList.classList.toggle('active');
+    });
+    
+    
+</script>
+
 <script src="app.js"></script>
+
+<!-- Adicionar o script para o menu hamburguer no javascript, caso queira implementar a funcionalidade de abrir e fechar o menu ao clicar no ícone. 
+ Aqui está um exemplo básico:    
+
+
+ const menuBtn = document.querySelector(".menu-btn");
+const navList = document.querySelector(".nav-list");
+
+menuBtn.addEventListener("click", () => {
+    navList.classList.toggle("active");
+
+    if(navList.classList.contains("active")){
+        menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }else{
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+
+}); -->
 
 </body> 
 </html>

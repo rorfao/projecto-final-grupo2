@@ -35,9 +35,6 @@ body.body-home {
     margin: 0;
     padding: 0;
    
-   
-
-
 
 }
 
@@ -111,8 +108,30 @@ h5 {
     );
 }
 
+.nav{
+    display:flex;
+    justify-content:space-between;
+}
+.nav-list{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
 
+.nav-list a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
 
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
 
 .header
 {
@@ -167,6 +186,7 @@ section
     font: size 1.3rem;
     font-weight:600;
     line-height: 1.2em;
+    overflow:hidden;
     
 }
 
@@ -175,6 +195,7 @@ section
     font-size:.7rem;
     letter-spacing:3px;
     opacity:.8;
+    overflow:hidden;
 }
 
 .header-menu
@@ -264,11 +285,12 @@ section
 .footer
 {
     position:relative;
-    color: chocolate;
-    font-size: small;
+    color: rgb(244, 151, 84);
+    font-size:0.9rem;
     z-index: 10;
     text-align: center;
     padding:15px 5px;
+   
 }
 
 
@@ -744,14 +766,21 @@ button:hover
     {
         display:none;
     }
+
+    button.menu-btn{
+    display:none;
+    }
+    
 }
 
-@media screen and (max-width:768px)
-{
-    .header
-    {
-        padding:25px;
-    }
+
+/* ==========================================================================
+   Media Queries - Responsividade
+   ========================================================================== */
+
+/* Tablets e Ecrãs Médios (Abaixo de 768px) */
+@media (max-width: 768px) {
+    
 
     .hero-content
     {
@@ -785,23 +814,12 @@ button:hover
         grid-template-columns:1fr;
     }
 
-
-
-}
-
-
-
-/* ==========================================================================
-   Media Queries - Responsividade
-   ========================================================================== */
-
-/* Tablets e Ecrãs Médios (Abaixo de 768px) */
-@media (max-width: 768px) {
     .header {
         flex-direction: column; /* Coloca o menu abaixo do logótipo */
         gap: 20px;
         padding: 20px;
         text-align: center;
+        
         
     }
 
@@ -830,9 +848,79 @@ button:hover
     .full-width {
         grid-column: span 2;
     }
+ 
+     .menu-btn{
+        display:block;
+        position:absolute;
+        top:30px;
+        right:25px;
+        z-index:1001;
+        width:auto;
+        padding:0;
+    }
+
+     .nav-list{
+        position:fixed;
+        top:0;
+        right:-280px;
+        width:260px;
+        height:100vh;
+
+        background:#562f0e;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        gap:35px;
+
+        transition:.35s;
+    }
+
+    .nav-list.active{
+        right:0;
+    }
+
 }
 
 
+
+
+@media screen and (max-width:520px) {
+
+ .menu-btn {
+        
+        display: block; /* Mostra o botão de menu */
+    }
+
+    
+.nav-list {
+    flex-direction: column;
+    position: absolute;
+    top:0;
+    right: -900px;
+    width: 80%;
+    height: 100vh;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+    list-style: none;
+    background: rgba(199, 134, 78, 0.9);
+    }
+
+.nav-list.active {
+    right: 0;
+    
+
+}
+
+.h1
+{
+    font-size:1rem;
+
+
+}
+}
 /* Telemóveis (Abaixo de 480px) */
 @media (max-width: 480px) {
     .menu {
