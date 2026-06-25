@@ -133,5 +133,4 @@ document.getElementById("formulario").addEventListener("submit", function(e)
     document.getElementById("mensagem").innerHTML =
         '<p class="sucesso">Registo validado com sucesso!</p>';
 });
-
 /* fim script registo */ 
