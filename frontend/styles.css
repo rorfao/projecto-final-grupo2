@@ -249,9 +249,8 @@ body
 
 .container-registo
 {
-
+    margin: 40px auto; 
     max-width: 800px;
-    margin: auto;
     background:rgb(207, 162, 117);
     padding: 20px;
     border-radius: 10px;
