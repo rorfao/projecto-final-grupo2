@@ -6,11 +6,30 @@ const distritosConcelhos = {
         "Oliveira do Bairro", "Ovar", "Santa Maria da Feira",
         "São João da Madeira", "Sever do Vouga", "Vagos", "Vale de Cambra"
     ],
+    "Beja": [
+    "Almodovar",
+    "Beja",
+    "Castro Verde",
+    "Moura",
+    "Ourique",
+    "Serpa",
+    "Vidigueira"
+    ],
     "Braga": [
         "Amares", "Barcelos", "Braga", "Cabeceiras de Basto",
         "Celorico de Basto", "Esposende", "Fafe", "Guimarães",
         "Póvoa de Lanhoso", "Terras de Bouro", "Vieira do Minho",
         "Vila Nova de Famalicão", "Vila Verde", "Vizela"
+    ],
+    "Castelo Branco": [
+    "Belmonte",
+    "Castelo Branco",
+    "Covilhã",
+    "Fundão",
+    "Idanha-a-Nova",
+    "Oleiros",
+    "Penamacor",
+    "Proença-a-Nova"
     ],
     "Coimbra": [
         "Arganil", "Cantanhede", "Coimbra", "Condeixa-a-Nova",

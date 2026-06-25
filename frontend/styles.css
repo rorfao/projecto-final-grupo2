@@ -25,6 +25,7 @@ body
     background:#1f1611;
     color:white;
     font-family:'Inter',sans-serif;
+
 }
 
 h1
@@ -53,7 +54,7 @@ h5
 .hero
 {
     position:relative;
-    min-height:100vh;
+    max-height:100vh;
     overflow:hidden;
 }
 
@@ -248,6 +249,7 @@ body
     background:#366b4b;
     color:white;
     font-family:'Inter',sans-serif;
+    height: 100vh;
 }
 
 .container-registo
