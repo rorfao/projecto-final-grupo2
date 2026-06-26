@@ -287,18 +287,42 @@ h1
     border: 1px solid rgba(255,255,255,.1);
     border-radius: 10px;
     display: flex;
-    gap: 20px;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .map {
     flex: 1;
-    min-width: 280px;
+    min-width: 320px;
 }
 
 .ateliers-sidebar {
     flex: 1;
     min-width: 320px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #f09935 rgba(255,255,255,0.08);
+}
+
+.ateliers-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ateliers-sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+}
+
+.ateliers-sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f09935, #c86a3b);
+    border-radius: 999px;
+}
+
+.ateliers-sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffb35c, #d66f3b);
 }
 
 .ateliers-list {
@@ -668,6 +692,17 @@ button:not(.menu-btn):hover {
 
     .feature {
         flex-direction: column;
+    }
+
+    .map,
+    .ateliers-sidebar {
+        min-width: 100%;
+    }
+
+    .ateliers-sidebar {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
     }
 
     .islands {
