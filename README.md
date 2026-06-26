@@ -81,7 +81,7 @@ O servidor ficará ativo em `http://localhost:3000`. Abra este endereço no seu 
 
 | Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
-| **GET** | `/api/status` | Verifica a saúde/estado da API ("API ativa") |
+| **GET** | `/api/estado` | Verifica a saúde/estado da API ("API ativa") |
 | **GET** | `/api/roteiro` | Lista todos os tugartes registados |
 | **GET** | `/api/roteiro/:id` | Obtém os detalhes de um tugarte específico por ID |
 | **POST** | `/api/roteiro` | Cria um novo tugarte (Requer validação) |
