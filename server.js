@@ -38,7 +38,7 @@ function validar(req,res,next)
     const distritoLimpo = String(distrito ?? "").trim()
     const concelhoLimpo = String(concelho ?? "").trim()
     const moradaLimpa = String(morada ?? "").trim()
-    const telefoneLimpo = String(telefone ?? "").trim()
+    const telefoneNumero = telefone ? Number(telefone) : null
     const emailLimpo = String(email ?? "").trim()
     const websiteLimpo = String(website ?? "").trim()
     const descricaoLimpa = String(descricao ?? "").trim()
@@ -69,11 +69,6 @@ function validar(req,res,next)
         erros.push("Morada demasiado longa (não superior a 200 caracteres).")
     }
 
-    if (telefoneLimpo && !/^\d+$/.test(telefoneLimpo))
-    {
-        erros.push("Telefone deve conter apenas números.")
-    }
-
     if (emailLimpo.length > 100)
     {
         erros.push("Email demasiado longo (não superior a 100 caracteres).")
@@ -97,6 +92,20 @@ function validar(req,res,next)
     if (erros.length > 0)
     {
         return res.status(400).json({erros})
+    }
+
+    req.body =
+    {
+        nome: nomeLimpo,
+        atividade: atividadeLimpo, 
+        distrito: distritoLimpo, 
+        concelho: concelhoLimpo,
+        morada: moradaLimpa,
+        telefone: telefoneNumero,
+        email: emailLimpo,
+        website: websiteLimpo,
+        descricao: descricaoLimpa,
+        url_imagem: urlImagemLimpa
     }
 
     next()
@@ -127,12 +136,12 @@ app.get("/api/roteiro/:id", async (req,res) =>
 
 app.post("/api/roteiro", validar, async (req,res) => 
 {
-    const {nome, atividade, distrito, concelho, morada, email, website, descricao, url_imagem} = req.body
+    const {nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem} = req.body
     if(!nome || !atividade || !distrito || !concelho || !descricao)
     {
         return res.status(400).json({erro: "Faltam campos obrigatórios!"})
     }
-    const query = "INSERT INTO tugartes (nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem) VALUES (?,?,?,?,?,?,?,?,?)"
+    const query = "INSERT INTO tugartes (nome, atividade, distrito, concelho, morada, telefone, email, website, descricao, url_imagem) VALUES (?,?,?,?,?,?,?,?,?,?)"
     const resposta = await pool.execute(query,[nome, atividade, distrito, concelho, morada||null, telefone||null, email||null, website||null, descricao, url_imagem||null])
     res.status(201).json({mensagem: "Atelier adicionado com sucesso"})
 })
