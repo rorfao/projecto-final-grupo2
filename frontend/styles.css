@@ -75,7 +75,7 @@ h5 {
     text-align: center;
     padding:3px ;
     margin-bottom: 25px;
-    color:#562f0e;
+    color:rgb(160, 105, 41);
 }
 
 .hero {
@@ -118,9 +118,9 @@ h5 {
     list-style:none;
     right:-280px;
 }
-.nav-list.active{
-    right:0;
-    
+.nav-list li{
+    margin:0;
+    padding:0;
 }
 .nav-list a{
     color:white;
@@ -303,13 +303,7 @@ section
 --------------------*/
 
 
-*
-{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;    
-}
+
 
 body
 {
@@ -470,7 +464,7 @@ button:hover
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background:#1f1611;
+    background:#493428;
     color:white;
     font-family:'Inter',sans-serif;
 }
@@ -518,10 +512,11 @@ button:hover
 }
 
 .card {
-    background: var(--white);
-    padding: 25px;
+    background:var(--cerde-seco);
+    padding: 30px;
+    margin: 20px 0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(163, 101, 7, 0.901);
 }
 
 .list-unstyled {
@@ -560,10 +555,14 @@ button:hover
 
 .team-member .role {
     font-size: 0.9rem;
-    color: #777;
+    color:#714318;
     display: block;
     margin-top: 5px;
 }
+
+
+
+
 
 /*falta tornar responsivo e alinhar itens -Carla---
 -----*/
@@ -620,21 +619,66 @@ button:hover
     z-index: 100;
     pointer-events: none;
 }
+/* =========================
+   MAP CARD COMO TABELA
+========================= */
 
-.map-card
-{
-    backdrop-filter:blur(10px);
-    background:rgba(0,0,0,.25);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:24px;
-    padding:30px;
-    margin:20px;
+.map-card {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    padding: 20px;
+
+    max-height: 80vh;
+    overflow-y: auto;
 }
+
+/* estilo tipo tabela */
+#district-list {
+    display: grid;
+    gap: 6px;
+}
+
+#district-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* hover estilo “linha de tabela” */
+#district-list li:hover {
+    background: rgba(240, 153, 53, 0.15);
+    color: #f09935;
+}
+
+/* selecionado */
+#district-list li.active {
+    background: rgba(240, 153, 53, 0.25);
+    color: #f09935;
+}
+
+/* header tipo tabela (os teus h4) */
+.map-card h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #f09935;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 
 .map-card h3
 {
+    text-align:center;
     margin-bottom:20px;
-    padding-bottom:20px;
+    padding-bottom:40px;
+    justify-content:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .map-card ul
@@ -642,33 +686,6 @@ button:hover
     list-style:none;
 }
 
-.map-card li
-{
-    padding:8px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.map-card li:hover, .map-card li.active {
-     background: rgba(240, 153, 53, 0.2);
-    color: #f09935;
-    padding-left: 15px;
-}
-
-
-.tooltip 
-{
-    position: absolute;
-    background: rgba(0,0,0,0.85);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    display: none;
-    z-index: 100;
-    pointer-events: none;
-}
 
 .islands
 {
@@ -698,29 +715,29 @@ button:hover
     transform: scale(1.03);
 }
       
-.features
+.feature
 {
     position:relative;
     z-index:10;
     max-width:1200px;
     margin:auto;
-    margin-bottom:40px;
+    margin-bottom:30px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    align-items:center;
     gap:20px;
     padding:30px;
     backdrop-filter:blur(14px);
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.1);
-    border-radius:24px;
-}
-
-.feature
-{
+    border-radius:10px;
     display:flex;
     align-items:center;
-    gap:15px;
+    
+    
 }
+
+   
+
 
 .feature span
 {
@@ -864,11 +881,11 @@ button:hover
      .nav-list{
         position:fixed;
         top:0;
-        right:-280px;
+        right:-70px;
         width:260px;
-        height:100vh;
+        height:70vh;
 
-        background:#562f0e;
+        background:#a58524;
 
         display:flex;
         flex-direction:column;
@@ -904,7 +921,7 @@ button:hover
     right: -900px;
     width: 80%;
     height: 100vh;
-    padding-top: 80px;
+    padding-top: 50px;
     transition: all 0.3s ease;
     list-style: none;
     background: rgba(199, 134, 78, 0.9);
@@ -972,7 +989,9 @@ button:hover
         margin-bottom: 15px;
     }
 
-    
+    .feature {
+        max-width: 400px;     /* Reduz o padding para caber melhor no ecrã */
+    }
     .container-registo {
        
         padding: 15px;     /* Reduz o espaçamento interno */

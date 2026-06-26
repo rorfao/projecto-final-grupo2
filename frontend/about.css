@@ -3,20 +3,3 @@
 
 
 
-footer {
-    text-align: center;
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #EAEAEA;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-@media (min-width: 768px) {
-    .grid-sections {
-        grid-template-columns: 1fr 1fr;
-    }
-    .full-width {
-        grid-column: span 2;
-    }
-}
